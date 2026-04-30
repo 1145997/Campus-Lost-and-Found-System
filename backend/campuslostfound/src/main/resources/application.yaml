@@ -29,17 +29,17 @@ mybatis-plus:
       id-type: auto
 
 jwt:
-  secret: your-very-strong-secret-key-change-this-at-least-32-bytes
-  expiration: 86400000
+  secret: ${JWT_SECRET:change-this-jwt-secret-at-least-32-bytes}
+  expiration: ${JWT_EXPIRATION:86400000}
   header: Authorization
   token-prefix: Bearer
 
 minio:
-  endpoint: http://8.133.16.236:9000
-  access-key: admin
-  secret-key: 0d00@0721
-  bucket-name: campus-lost-found
-  read-path: http://8.133.16.236:9000/campus-lost-found
+  endpoint: ${MINIO_ENDPOINT:http://127.0.0.1:9000}
+  access-key: ${MINIO_ACCESS_KEY:minioadmin}
+  secret-key: ${MINIO_SECRET_KEY:minioadmin}
+  bucket-name: ${MINIO_BUCKET:campus-lost-found}
+  read-path: ${MINIO_READ_PATH:http://127.0.0.1:9000/campus-lost-found}
 
 logging:
   level:
@@ -48,5 +48,5 @@ logging:
 
 wechat:
   miniapp:
-    appid: wxdf1286da1ad207a9
-    secret: 9fbe84b4ce9c71f9698fbfb3e3bb22e5
+    appid: ${WECHAT_MINIAPP_APPID:}
+    secret: ${WECHAT_MINIAPP_SECRET:}

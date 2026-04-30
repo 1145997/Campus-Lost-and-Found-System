@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 1,
     "作用": "管理员登录，校验账号密码并返回JWT",
@@ -40,7 +40,7 @@
     "作用": "发布失物或招领信息",
     "请求方式": "POST",
     "接口": "/api/lostfound",
-    "提交示例": "{\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"校园卡\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"本人在图书馆附近丢失校园卡一张，希望拾到者联系我。\",\"image\":\"http://8.133.16.236:9001/campus-lost-found/lostfound/82a1d4ee-e41d-411c-aaab-a76e30c8f7da.png\",\"eventTime\":\"2026-04-01T20:30:00\",\"eventPlace\":\"图书馆门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\"}",
+    "提交示例": "{\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"校园卡\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"本人在图书馆附近丢失校园卡一张，希望拾到者联系我。\",\"image\":\"http://example.com/campus-lost-found/demo/lostfound-image.png\",\"eventTime\":\"2026-04-01T20:30:00\",\"eventPlace\":\"图书馆门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\"}",
     "成功示例": "{\"code\":200,\"message\":\"发布成功\",\"data\":null}",
     "备注": "需在请求头携带Authorization: Bearer 用户token；用于发布失物/招领；未登录或非user角色不可访问"
   },
@@ -50,7 +50,7 @@
     "请求方式": "GET",
     "接口": "/api/lostfound/list",
     "提交示例": "N/A",
-    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"list\":[{\"id\":3,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"校园卡\",\"categoryId\":6,\"image\":\"http://8.133.16.236:9001/campus-lost-found/lostfound/82a1d4ee-e41d-411c-aaab-a76e30c8f7da.png\",\"eventPlace\":\"图书馆门口\",\"eventTime\":\"2026-04-01T20:30:00\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"status\":0,\"viewCount\":0,\"createTime\":\"2026-04-01T23:58:00\"}],\"total\":1,\"pageNum\":1,\"pageSize\":10}}",
+    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"list\":[{\"id\":3,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"校园卡\",\"categoryId\":6,\"image\":\"http://example.com/campus-lost-found/demo/lostfound-image.png\",\"eventPlace\":\"图书馆门口\",\"eventTime\":\"2026-04-01T20:30:00\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"status\":0,\"viewCount\":0,\"createTime\":\"2026-04-01T23:58:00\"}],\"total\":1,\"pageNum\":1,\"pageSize\":10}}",
     "备注": "支持type、status、keyword、pageNum、pageSize"
   },
   {
@@ -59,7 +59,7 @@
     "请求方式": "GET",
     "接口": "/api/lostfound/{id}",
     "提交示例": "N/A",
-    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"id\":5,\"userId\":1,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"测试\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"本人在图书馆附近丢失校园卡一张，希望拾到者联系我。\",\"image\":\"http://8.133.16.236:9001/campus-lost-found/lostfound/82a1d4ee-e41d-411c-aaab-a76e30c8f7da.png\",\"eventTime\":\"2026-04-01T20:30:00\",\"eventPlace\":\"图书馆门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\",\"status\":0,\"viewCount\":1,\"auditReason\":null,\"auditAdminId\":null,\"auditTime\":null,\"finishTime\":null,\"createTime\":\"2026-04-02T01:00:33\"}}",
+    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"id\":5,\"userId\":1,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"测试\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"本人在图书馆附近丢失校园卡一张，希望拾到者联系我。\",\"image\":\"http://example.com/campus-lost-found/demo/lostfound-image.png\",\"eventTime\":\"2026-04-01T20:30:00\",\"eventPlace\":\"图书馆门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\",\"status\":0,\"viewCount\":1,\"auditReason\":null,\"auditAdminId\":null,\"auditTime\":null,\"finishTime\":null,\"createTime\":\"2026-04-02T01:00:33\"}}",
     "备注": "路径参数为id"
   },
   {
@@ -176,7 +176,7 @@
     "请求方式": "GET",
     "接口": "/api/lostfound/my",
     "提交示例": "N/A",
-    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"list\":[{\"id\":5,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"测试\",\"categoryId\":6,\"image\":\"http://8.133.16.236:9001/campus-lost-found/lostfound/82a1d4ee-e41d-411c-aaab-a76e30c8f7da.png\",\"eventPlace\":\"图书馆门口\",\"eventTime\":\"2026-04-01T20:30:00\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"status\":0,\"viewCount\":1,\"createTime\":\"2026-04-02T01:00:33\"}],\"total\":1,\"pageNum\":1,\"pageSize\":10}}",
+    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"list\":[{\"id\":5,\"type\":1,\"title\":\"寻找丢失的校园卡\",\"itemName\":\"测试\",\"categoryId\":6,\"image\":\"http://example.com/campus-lost-found/demo/lostfound-image.png\",\"eventPlace\":\"图书馆门口\",\"eventTime\":\"2026-04-01T20:30:00\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"status\":0,\"viewCount\":1,\"createTime\":\"2026-04-02T01:00:33\"}],\"total\":1,\"pageNum\":1,\"pageSize\":10}}",
     "备注": "需在请求头携带Authorization: Bearer 用户token；支持pageNum、pageSize；用于我的发布页面；未登录或非user角色不可访问"
   },
   {
@@ -193,7 +193,7 @@
     "作用": "修改当前登录用户自己的失物或招领信息，修改后重新进入待审核",
     "请求方式": "PUT",
     "接口": "/api/lostfound/{id}",
-    "提交示例": "{\"type\":1,\"title\":\"重新修改后的校园卡寻物启事\",\"itemName\":\"校园卡\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"我在第二教学楼附近丢失校园卡，如有拾到请联系。\",\"image\":\"http://8.133.16.236:9001/campus-lost-found/lostfound/82a1d4ee-e41d-411c-aaab-a76e30c8f7da.png\",\"eventTime\":\"2026-04-02T08:30:00\",\"eventPlace\":\"第二教学楼门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\"}",
+    "提交示例": "{\"type\":1,\"title\":\"重新修改后的校园卡寻物启事\",\"itemName\":\"校园卡\",\"categoryId\":6,\"brand\":\"\",\"color\":\"蓝色\",\"description\":\"我在第二教学楼附近丢失校园卡，如有拾到请联系。\",\"image\":\"http://example.com/campus-lost-found/demo/lostfound-image.png\",\"eventTime\":\"2026-04-02T08:30:00\",\"eventPlace\":\"第二教学楼门口\",\"contactName\":\"张三\",\"contactPhone\":\"13900000001\",\"contactWechat\":\"zhangsan123\"}",
     "成功示例": "{\"code\":200,\"message\":\"修改成功，已重新进入审核\",\"data\":null}",
     "备注": "需在请求头携带Authorization: Bearer 用户token；只能修改本人发布的信息；路径参数为id；修改后status重置为0待审核；未登录或非user角色不可访问"
   },
