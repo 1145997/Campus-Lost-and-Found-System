@@ -4,7 +4,7 @@
   "version": "5.1.0",
   "description": "Admin console for Campus Lost and Found System",
   "author": "1145997",
-  "repository": "https://github.com/1145997/GrduateProject",
+  "repository": "https://github.com/1145997/Campus-Lost-and-Found-System",
   "scripts": {
     "dev": "vite",
     "build:staging": "vue-tsc && vite build --mode staging",
