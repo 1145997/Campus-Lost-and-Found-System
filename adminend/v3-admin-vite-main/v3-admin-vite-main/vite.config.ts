@@ -13,7 +13,10 @@ import svgLoader from "vite-svg-loader"
 
 // Configuring Vite: https://cn.vite.dev/config
 export default defineConfig(({ mode }) => {
-  const { VITE_PUBLIC_PATH } = loadEnv(mode, process.cwd(), "") as ImportMetaEnv
+  const {
+    VITE_PUBLIC_PATH,
+    VITE_DEV_PROXY_TARGET = "http://localhost:8080"
+  } = loadEnv(mode, process.cwd(), "") as ImportMetaEnv
   return {
     // 开发或打包构建时用到的公共基础路径
     base: VITE_PUBLIC_PATH,
@@ -38,7 +41,7 @@ export default defineConfig(({ mode }) => {
       // 反向代理
       proxy: {
         "/api": {
-          target: "http://127.0.0.1:8080",
+          target: VITE_DEV_PROXY_TARGET,
           changeOrigin: true
         }
       },

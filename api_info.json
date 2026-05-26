@@ -32,7 +32,7 @@
     "请求方式": "POST",
     "接口": "/api/file/upload",
     "提交示例": "form-data: file=<选择文件>",
-    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"fileName\":\"test.png\",\"objectName\":\"lostfound/550e8400-e29b-41d4-a716-446655440000.png\",\"url\":\"http://127.0.0.1:9000/campus-lost-found/lostfound/550e8400-e29b-41d4-a716-446655440000.png\"}}",
+    "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"fileName\":\"test.png\",\"objectName\":\"lostfound/550e8400-e29b-41d4-a716-446655440000.png\",\"url\":\"https://files.example.com/campus-lost-found/lostfound/550e8400-e29b-41d4-a716-446655440000.png\"}}",
     "备注": "提交方式为multipart/form-data"
   },
   {

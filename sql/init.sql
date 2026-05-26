@@ -348,8 +348,8 @@ INSERT INTO claim_record (
 INSERT INTO operation_log (
     admin_id, module, operation_type, operation_desc, request_method, request_url, ip
 ) VALUES
-(1, '管理员模块', '登录', '管理员登录系统', 'POST', '/admin/login', '127.0.0.1'),
-(1, '公告模块', '新增', '新增系统公告', 'POST', '/admin/notice/add', '127.0.0.1');
+(1, '管理员模块', '登录', '管理员登录系统', 'POST', '/admin/login', 'localhost'),
+(1, '公告模块', '新增', '新增系统公告', 'POST', '/admin/notice/add', 'localhost');
 
 -- ============================================
 -- 19. 视图（可选，方便统计）
