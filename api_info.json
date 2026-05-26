@@ -330,7 +330,7 @@
     "接口": "/api/auth/admin/info",
     "提交示例": "N/A",
     "成功示例": "{\"code\":200,\"message\":\"success\",\"data\":{\"id\":1,\"username\":\"admin\",\"nickname\":\"系统管理员\",\"role\":\"super_admin\"}}",
-    "备注": "需在请求头携带Authorization: Bearer 管理员token；用于V3 Admin Vite登录后获取当前管理员信息；未携带管理员token或角色不是admin/super_admin时不可访问"
+    "备注": "需在请求头携带Authorization: Bearer 管理员token；用于后台管理端登录后获取当前管理员信息；未携带管理员token或角色不是admin/super_admin时不可访问"
   },
   {
     "id": 39,
